@@ -36,8 +36,7 @@ function BoardBar() {
       overflowX : 'auto',
       bgcolor: (theme) => (
         theme.palette.mode === 'dark' ? '#34495e' : '#74b9ff'
-      ),
-      borderBottom: '1px solid #b2bec3'
+      )
     }}>
       <Box sx={{ display:'flex', alignItems:'center', gap:2 }}>
         <Chip
@@ -73,7 +72,7 @@ function BoardBar() {
       </Box>
 
       <Box sx={{ display:'flex', alignItems:'center', gap:2 }}>
-        <Button 
+        <Button
           variant="outlined"
           startIcon={<PersonAddIcon/>}
           sx ={{
@@ -89,7 +88,10 @@ function BoardBar() {
               width:'34px',
               height:'34px',
               fontSize:'16px',
-              border : 'none'
+              border : 'none',
+              color : 'white',
+              cursor : 'pointer',
+              '&:first-of-type':{ bgcolor :'#a4b0be' }
             }
           }}
         >
