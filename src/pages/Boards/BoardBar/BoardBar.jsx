@@ -10,6 +10,7 @@ import AvatarGroup from '@mui/material/AvatarGroup'
 import Tooltip from '@mui/material/Tooltip'
 import Button from '@mui/material/Button'
 import PersonAddIcon from '@mui/icons-material/PersonAdd'
+import { capitalizeFirstLetter } from '~/utils/formatters'
 const MUNE_STYLE = {
   color : 'white',
   bgcolor : 'transparent',
@@ -24,7 +25,7 @@ const MUNE_STYLE = {
   }
 }
 
-function BoardBar() {
+function BoardBar({ board }) {
   return (
     <Box px={2} sx={{
       width:'100%',
@@ -42,13 +43,13 @@ function BoardBar() {
         <Chip
           sx={ MUNE_STYLE }
           icon= { <DashboardCustomizeIcon /> }
-          label="TTHL"
+          label={ board?.title }
           clickable
         />
         <Chip
           sx={ MUNE_STYLE }
           icon= { <VpnLockIcon /> }
-          label="WorkSpace"
+          label={ capitalizeFirstLetter(board?.type) }
           clickable
         />
         <Chip
